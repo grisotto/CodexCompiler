@@ -5,8 +5,16 @@
 %option noyywrap
 %%
 /*Definir os tokens necessarios */
-[01]		{ return BIT; }    /* Single character literal into token */
+
 [a-zA-Z_][a-zA-Z0-9_]*		{return IDENTIFIER; } /*pega identificadores */
+[=]				{return TOKEN_IGUAL;}
+[>]				{return TOKEN_MAIOR;}
+[<]				{return TOKEN_MENOR;}
+[<=]				{return TOKEN_MENOR_IGUAL;}
+[>=]				{return TOKEN_MAIOR_IGUAL;}
+[==]				{return TOKEN_IGUALDADE;}
+[!=]				{return TOKEN_DIFERENTE;}
+
 \n                              /* munch */
 %%
 
