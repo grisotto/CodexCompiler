@@ -18,11 +18,16 @@ int main(int argc, char *argv[]) {
 			}
 			
 			yyparse();
-			if (yyin)
+			if (yyin) {
+				//se ele ler o arquivo, faz aqui
+				printf("Eu li o arquivo hahaha %s. \n", build_filename);
 				fclose(yyin);
+			}
 			
 			
 			return 0;
-		}else
+		}else 
+			
 			return 1;
+		
 	}

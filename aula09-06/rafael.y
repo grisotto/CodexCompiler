@@ -1,5 +1,6 @@
 %{
-#include <stdio.h
+#include <stdio.h>
+#include <stdlib.h>
 
 %}
 
@@ -33,13 +34,13 @@ extern int yylineno;
 extern char *yytext;
 extern char *build_filename;
 
-void yyerror(const char *s)
+int yyerror(char *s)
 {
 	fprintf(stderr, "%s:%d: error: %s %s\n", 
 		build_filename, yylineno, s, yytext);
 	exit(1);
 }
 
-extern "C" int yywrap() {
+int yywrap() {
 	return 1;
 }
